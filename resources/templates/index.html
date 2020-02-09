@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns= "http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello There</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link href="../static/css/bootstrap.min.css" th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href = "../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="../static/js/jquery-2.1.4_min.js" th:src="@{/static/js/jquery-2.1.4_min.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/static/js/bootstrap.min.js}"></script>
+    <style>
+        body {
+            padding-top: 7rem;
+            background-color: aliceblue;;
+            text-align: center;
+        }.align-template {
+             text-align: center;
+         }
+
+        table.horizontal-align th {
+            text-align: center;
+        }
+
+        thead th {
+            background-color: #D7D7D7;
+        }
+
+        tbody td {
+            background-color: #F1F1F1;
+            border: 1px solid #444444;
+        }
+
+        table {
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 100px;
+            border: 2px solid #444444;
+
+        }
+
+        button {
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            background: #4b4b4b;
+            color: rgb(255, 251, 249);
+            padding: 15px 30px;
+            position: center;
+            box-shadow: 2px 2px 3px
+            rgba(0,0,0,0.3);
+        }
+        input:focus {
+            border: 3px solid #555;
+        }
+        .form-group {
+
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            background:  #F1F1F1;
+            box-shadow: rgba(0,0,0,0.5);
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Работу выполнила: Костина Оксана</h1>
+    <h3>Группа: ИКБО-16-17</h3>
+    <p><a href="/pages/table" th:href="@{/pages/table}"><button type="button" >К таблице художников</button></a> </p>
+    <p><a href="/pages/rometoarabic"> <button type="button" >К индивидуальному заданию</button></a> </p>
+</body>
+</html>

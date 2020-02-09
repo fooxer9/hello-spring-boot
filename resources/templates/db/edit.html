@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns= "http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href = "../../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="../static/js/jquery-2.1.4_min.js" th:src="@{/static/js/jquery-2.1.4_min.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/static/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container">
+<form class="form-horizontal" th:object="${artist}" th:action="@{/update}" name="edit_form" id="edit_form"
+      method="post" role="form">
+
+    <div class="form-group">
+        <input type="hidden" id="art_id" th:name="art_id" th:value="*{art_id}"/>
+        <input type="text" required class="form-control" id="art_fullName" th:name="art_fullName" th:value="*{art_fullName}" maxlength="256"/>
+        <hr>
+        <input type="text"required class="form-control" id="art_link" th:name="art_link" th:value="*{art_link}" maxlength="256"/>
+        <hr>
+        <input type="text" required class="form-control" id="art_genre" th:name="art_genre" th:value="*{art_genre}" maxlength="256"/>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Изменить</button>
+</form>
+</div>
+
+</body>
+</html>

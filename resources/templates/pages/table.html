@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns= "http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link href="../../static/css/bootstrap.min.css" th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <link href="../../static/css/style.css" th:href="@{/static/css/style.css}" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="../../static/js/jquery-2.1.4_min.js" th:src="@{/static/js/jquery-2.1.4_min.js}"></script>
+    <script src="../../static/js/bootstrap.min.js" th:src="@{/static/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href = "../../static/css/style.css">
+
+    <title>Artist's table</title>
+</head>
+
+<body>
+<div th:fragment="arttable">
+    <table>
+        <caption>CG-художники</caption>
+        <thead>
+        <tr>
+            <th style="width: 5%"> ID</th>
+            <th style="width: 20%">Имя художника</th>
+            <th style="width: 20%">Ссылка на репозитрий</th>
+            <th style="width: 20%">Направление работы</th>
+            <th style="width: 5%">Edit</th>
+            <th style="width: 5%">Delete</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="artist : ${artists}">
+            <td th:text ="${artist.art_id}" style="text-align: center">ID</td>
+            <td th:text ="${artist.art_fullName}" style="text-align: center">Имя художника</td>
+            <td th:text ="${artist.art_link}" style="text-align: center">Ссылка на репозиторий</td>
+            <td th:text ="${artist.art_genre}" style="text-align: center">Направление работы</td>
+            <td style="text-align: center"> <a th:href="@{'/edit/{id}'(id=${artist.art_id})}"><i class = "fa fa-edit" style="font-size:20px"></i></a></td>
+            <td style="text-align: center"> <a th:href="@{'/delete/{id}'(id=${artist.art_id})}"><i class = "fa fa-trash" style="font-size:20px"></i></a></td>
+
+        </tr>
+        </tbody>
+
+
+    </table>
+
+    <a href="/new"><button type="button" >Добавить запись</button> </a>
+
+
+</div>
+
+<a href="/"><button type="button" >Вернуться на главную</button></a>
+
+</body>
+</html>
